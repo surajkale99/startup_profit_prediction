@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Startup Profit Prediction</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        input, select {
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Startup Profit Prediction</h2>
+
+    <form action="/predict" method="post">
+        <input type="text" name="rd" placeholder="R&D Spend" required><br>
+        <input type="text" name="ad" placeholder="Administration" required><br>
+        <input type="text" name="mar" placeholder="Marketing Spend" required><br>
+
+        <select name="state">
+            <option value="California">California</option>
+            <option value="Florida">Florida</option>
+            <option value="New York">New York</option>
+        </select><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <h3>{{ prediction_text }}</h3>
+</div>
+
+</body>
+</html>
